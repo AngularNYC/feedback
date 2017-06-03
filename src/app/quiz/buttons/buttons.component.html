@@ -1,0 +1,5 @@
+<div class="buttons-container">
+  <div *ngFor="let answer of answers; let i = index;" class="button" (click)="buttonClick(i)">
+    {{answer}}
+  </div>
+</div>

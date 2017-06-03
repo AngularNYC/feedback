@@ -1,0 +1,10 @@
+.button {
+    width:49%;
+    height:50%;
+    display: inline-block;
+    border:1px solid white;
+    background: cyan;
+}
+.buttons-container {
+    height:700px;
+}

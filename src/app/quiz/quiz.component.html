@@ -1,0 +1,7 @@
+<div *ngIf="isAnswering">
+  <app-buttons [answers]="currentQuestion?.answers" (answer)="answered($event)"></app-buttons>
+</div>
+
+<div *ngIf="!isAnswering">
+  <img src="https://media.giphy.com/media/jAYUbVXgESSti/giphy.gif" alt="">
+</div>
