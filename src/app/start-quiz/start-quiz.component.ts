@@ -8,7 +8,6 @@ import { Router } from "@angular/router";
 })
 export class StartQuizComponent implements OnInit {
   isError = false;
-  nickname = '';
   pin;
   constructor(private router: Router) {}
 
@@ -16,8 +15,8 @@ export class StartQuizComponent implements OnInit {
   }
 
   start(){
-    if(this.nickname && this.pin) { //todo add template validation
-      this.router.navigate(['quiz',this.pin, this.nickname]);
+    if(this.pin) { //todo add template validation
+      this.router.navigate(['quiz',this.pin]);
     }
   }
 

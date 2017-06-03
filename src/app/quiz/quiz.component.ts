@@ -14,13 +14,11 @@ export class QuizComponent implements OnInit {
   currentQuestionId = 0;
   questions = [];
   pin:number;
-  nickname = 'Sam';
   session;
   constructor(private firebaseDb: AngularFireDatabase,private router: Router,private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.pin = Number(this.route.snapshot.params['id']);
-    this.nickname = this.route.snapshot.params['nickname'];
     this.firebaseDb.list('/sessions')
       .map(sessions => sessions.find(session => session.pin === this.pin))
       .subscribe(session => {
@@ -38,10 +36,7 @@ export class QuizComponent implements OnInit {
   }
 
   answered(answerIndex){
-    this.firebaseDb.list(`/sessions/${this.session.$key}/responses/${this.currentQuestionId}`).push({
-      nickname:this.nickname,
-      answerIndex
-    });
+    this.firebaseDb.list(`/sessions/${this.session.$key}/responses/${this.currentQuestionId}`).push(answerIndex);
     this.isAnswering = false;
   }
 

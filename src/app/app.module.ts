@@ -30,7 +30,7 @@ const routes: Routes = [
     component: StartQuizComponent
   },
   {
-    path:'quiz/:id/:nickname',
+    path:'quiz/:id',
     component: QuizComponent
   }
 ]
