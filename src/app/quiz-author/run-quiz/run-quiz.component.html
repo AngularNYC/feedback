@@ -1,0 +1,15 @@
+<div>
+  <h1>{{questions[currentQuestionId].question}}</h1>
+  answers here
+
+  <button (click)="next()">
+    <span *ngIf="currentQuestionId != (questions.length - 1)">Next</span>
+    <span *ngIf="currentQuestionId === (questions.length - 1)">Finish</span>
+  </button>
+  <h1>{{timeLeft}} secs left</h1>
+</div>
+
+
+<div *ngIf="false">
+  results
+</div>

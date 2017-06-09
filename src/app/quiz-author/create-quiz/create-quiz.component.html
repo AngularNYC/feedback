@@ -1,0 +1,9 @@
+<div *ngIf="!pin">
+  <textarea [(ngModel)]="questionsJson" cols="30" rows="10" placeholder="Paste json"></textarea>
+  <button (click)="create()">Create</button>
+</div>
+
+<div *ngIf="pin">
+  <h1>Quiz pin: {{pin}}</h1>
+  <button (click)="start()">Start!</button>
+</div>

@@ -1,0 +1,2 @@
+<app-create-quiz *ngIf="!isStarted" (started)="start($event)"></app-create-quiz>
+<app-run-quiz *ngIf="isStarted" [sessionKey]="sessionKey"></app-run-quiz>

@@ -23,14 +23,18 @@ export class QuizComponent implements OnInit {
       .map(sessions => sessions.find(session => session.pin === this.pin))
       .subscribe(session => {
         if(!session){
-          this.router.navigate(['']); 
+          this.router.navigate(['']);
         }
         this.session = session;
         this.questions = Object.keys(session.questions).map(key => {return session.questions[key]});
         this.firebaseDb.object(`/sessions/${session.$key}/currentQuestionId`).map(x => x.$value).subscribe(id => {
-          this.currentQuestion = this.questions[id];
-          this.currentQuestion.answers = Object.keys(this.currentQuestion.answers).map(key => {return this.currentQuestion.answers[key]});
-          this.isAnswering = true;
+          debugger;
+          this.currentQuestionId = id;
+          if(id != -1){
+            this.currentQuestion = this.questions[id];
+            this.currentQuestion.answers = Object.keys(this.currentQuestion.answers).map(key => {return this.currentQuestion.answers[key]});
+            this.isAnswering = true;
+          }
         });
       });
   }

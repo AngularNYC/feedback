@@ -7,10 +7,12 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {RouterModule, Routes} from '@angular/router';
-import { CreateQuizComponent } from './create-quiz/create-quiz.component';
+import { CreateQuizComponent } from './quiz-author/create-quiz/create-quiz.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { ButtonsComponent } from './quiz/buttons/buttons.component';
 import { StartQuizComponent } from './start-quiz/start-quiz.component';
+import { RunQuizComponent } from './quiz-author/run-quiz/run-quiz.component';
+import { QuizAuthorComponent } from './quiz-author/quiz-author.component';
 
 const firebaseConfig = {
     apiKey: "AIzaSyBJq3l-gXZEP1z2_yWOsJJRt1TuvE1ItdI",
@@ -23,7 +25,7 @@ const firebaseConfig = {
 const routes: Routes = [
   {
     path: 'create',
-    component: CreateQuizComponent
+    component: QuizAuthorComponent
   },
   {
     path:'',
@@ -42,7 +44,9 @@ const routes: Routes = [
     CreateQuizComponent,
     QuizComponent,
     ButtonsComponent,
-    StartQuizComponent
+    StartQuizComponent,
+    RunQuizComponent,
+    QuizAuthorComponent
   ],
   imports: [
     BrowserModule,

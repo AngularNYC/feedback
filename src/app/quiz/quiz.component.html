@@ -1,7 +1,14 @@
+<!--about to start-->
+<div *ngIf="currentQuestionId === -1">
+  The quiz will start in a few
+</div>
+
+<!--answering the question-->
 <div *ngIf="isAnswering">
   <app-buttons [answers]="currentQuestion?.answers" (answer)="answered($event)"></app-buttons>
 </div>
 
+<!--loading screen-->
 <div *ngIf="!isAnswering">
   <img src="https://media.giphy.com/media/jAYUbVXgESSti/giphy.gif" alt="">
 </div>
