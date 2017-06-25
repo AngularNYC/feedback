@@ -28,7 +28,6 @@ export class QuizComponent implements OnInit {
         this.session = session;
         this.questions = Object.keys(session.questions).map(key => {return session.questions[key]});
         this.firebaseDb.object(`/sessions/${session.$key}/currentQuestionId`).map(x => x.$value).subscribe(id => {
-          debugger;
           this.currentQuestionId = id;
           if(id != -1){
             this.currentQuestion = this.questions[id];
